@@ -14,7 +14,7 @@ import {
 import Image from 'next/image';
 import Link from "next/link";
 
-export function SignUp() {
+export default function SignUp() {
   return (
     <>
       <Image
@@ -75,5 +75,3 @@ export function SignUp() {
     </>
   );
 }
-
-export default SignUp;
