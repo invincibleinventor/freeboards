@@ -1,24 +1,28 @@
 'use client'
 
-import Link from "next/link";
+import { SimpleFooter } from "@/widgets/layout";
 import {
+  Button,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
-  Input,
+  CardHeader,
   Checkbox,
-  Button,
+  Input,
   Typography,
 } from "@material-tailwind/react";
-import { SimpleFooter } from "@/widgets/layout";
+import Image from 'next/image';
+import Link from "next/link";
 
 export function SignUp() {
   return (
     <>
-      <img
+      <Image
         src="/img/background-2.jpg"
         className="absolute inset-0 z-0 h-full w-full object-cover"
+        width={1920}
+        height={1080}
+        alt='background'
       />
       <div className="absolute inset-0 z-0 h-full w-full bg-black/50" />
       <div className="container mx-auto p-4">

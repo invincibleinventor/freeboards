@@ -1,25 +1,29 @@
 'use client'
 
-import Link from "next/link";
+import { SimpleFooter } from "@/widgets/layout";
 import {
+  Button,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
-  Input,
+  CardHeader,
   Checkbox,
-  Button,
+  Input,
   Typography,
 } from "@material-tailwind/react";
-import { SimpleFooter } from "@/widgets/layout";
+import Image from 'next/image';
+import Link from "next/link";
 
 export function SignIn() {
   return (
     <>
-      <img
-        src="/img/background-2.jpg"
-        className="absolute inset-0 z-0 h-full w-full object-cover"
-      />
+    <Image
+      src="/img/background-2.jpg"
+      className="absolute inset-0 z-0 h-full w-full object-cover"
+      width={1920}
+      height={1080}
+      alt='background'
+    />
       <div className="absolute inset-0 z-0 h-full w-full bg-black/50" />
       <div className="container mx-auto p-4">
         <Card className="absolute top-2/4 left-2/4 w-full max-w-[24rem] -translate-y-2/4 -translate-x-2/4">
