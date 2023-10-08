@@ -1,9 +1,8 @@
-'use client'
 
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { ThemeProvider } from '@material-tailwind/react'
+import { ThemeProvider } from './materials/material'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +19,12 @@ export default function RootLayout({
   return (
     <ThemeProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <div className="w-screen h-screen flex items-center content-center">
+            <div className='w-screen h-screen xl:w-[1400px] mx-auto'>
+          {children}
+          </div>
+          </div></body>
       </html>
     </ThemeProvider>
   )
