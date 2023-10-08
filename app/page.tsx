@@ -2,18 +2,26 @@
 import Image from 'next/image'
 import { useEffect, useState } from "react";
 
-import {Button,Input,Navbar,IconButton,Card,MobileNav, Carousel, Typography} from './materials/material'
+import {Button,Input,Dialog,DialogBody,DialogFooter,DialogHeader,Navbar,IconButton,Card,MobileNav, Carousel, Typography} from './materials/material'
 export default function Home() {
   const [link,onLinkChange] = useState('');
   const [linktrue,onLinkTrue] = useState(false);
   const [openNav, setOpenNav] = useState(false);
+  const [open, setOpen] = useState(false);
+ 
+  const handleOpen = () => setOpen(!open);
+ 
+
   const error = false
   function checklink(link:any){
     if(1==1){
       onLinkTrue(true)
+      
     }
     else{
       onLinkTrue(false)
+      onLinkChange('')
+      setOpen(true)
     }
   }
  
@@ -114,16 +122,17 @@ export default function Home() {
       </div>
       <Input
         type="email"
+        size='lg'
+        value={link}
         placeholder="Enter a bulletin name"
-        className="border font-inter my-8 w-72 border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-600 focus:border-gray-900 focus:border-t-gray-900 focus:ring-gray-900/10"
+        className="border font-inter text-md my-8 w-72 border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-800 placeholder:font-medium  !font-inter  placeholder:!font-inter focus:border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
         labelProps={{
           className: "hidden",
         }}
-        error = {linktrue}
         onChange={(e:any)=>onLinkChange(e.target.value)}
-        containerProps={{ className: "min-w-[100px]" }}
       />
-      <Button className="my-12 content-center mx-auto flex items-center gap-3">
+       
+      <Button className="my-12 content-center mx-auto flex items-center gap-3" onClick={()=>checklink(link)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -131,7 +140,6 @@ export default function Home() {
           strokeWidth={2}
           stroke="currentColor"
           className="h-5 w-5"
-          onClick={()=>checklink(link)}
         >
         
           <path
@@ -142,6 +150,35 @@ export default function Home() {
         </svg>
         Create Your Bulletin
       </Button>
+      <Dialog
+        open={open}
+        handler={handleOpen}
+        animate={{
+          mount: { scale: 1, y: 0 },
+          unmount: { scale: 0.9, y: -100 },
+        }}
+      >
+        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogBody divider>
+          The key to more success is to have a lot of pillows. Put it this way,
+          it took me twenty five years to get these plants, twenty five years of
+          blood sweat and tears, and I&apos;m never giving up, I&apos;m just
+          getting started. I&apos;m up to something. Fan luv.
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={handleOpen}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button variant="gradient" color="green" onClick={handleOpen}>
+            <span>Confirm</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
       </div>
    </section>
    </div>
