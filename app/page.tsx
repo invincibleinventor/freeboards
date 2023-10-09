@@ -125,7 +125,7 @@ export default function Home() {
         size='lg'
         value={link}
         placeholder="Enter a bulletin name"
-        className="border font-inter text-md my-8 w-72 border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-800 placeholder:font-medium  !font-inter  placeholder:!font-inter focus:border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
+        className="border font-inter text-lg my-8 !w-72 border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-800 placeholder:font-medium  !font-inter  placeholder:!font-inter focus:border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
         labelProps={{
           className: "hidden",
         }}
