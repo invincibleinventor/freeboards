@@ -50,7 +50,7 @@ export default function Home() {
     </ul>
   );
   return (
-   <div className='h-screen flex md:py-20 py-5 px-5 md:px-0 flex-col items-center content-center'>
+   <div className='h-screen flex lg:py-20 py-5 px-5 md:px-0 flex-col items-center content-center'>
           <Navbar className="sticky top-0 z-10 md:h-max md:max-w-full rounded-xl py-2 px-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
